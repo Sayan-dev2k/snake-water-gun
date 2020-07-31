@@ -1,5 +1,7 @@
 import random
 i=0
+you=0
+comp=0
 while(i<10):
     a=input("Enter your chioce(s/w/g):")
     lst=["snake","water","gun"]
@@ -7,26 +9,30 @@ while(i<10):
     print("computer's choice:",b)
     if(a=="snake"):
         if(b=="water"):
-            print("you:1 comp:0")
+            you=you+1
         elif(b=="gun"):
-            print("you:0 comp:1")
+            comp=comp+1
         else:
             print("both 0")
     elif(a=="water"):
         if(b=="gun"):
-            print("you:1 comp:0")
+            you=you+1
         elif(b=="snake"):
-            print("you 0 comp:1")
+            comp=comp+1
         else:
             print("both 0")
     elif(a=="gun"):
         if(b=="snake"):
-            print("you:1 comp:0")
+            you=you+1
         elif(b=="water"):
-            print("you:0 comp:1")
+            comp=comp+1
         else:
             print("both 0")
     i=i+1
-
-print("The winner is...")
-print("******atmanirbhar bano babu***")    
+print("Total points...")
+print("You:",you)
+print("computer:",comp)
+if(you>comp):
+    print("you are the winner with total points",you)
+else:
+    print("Computer is the winner with total points",comp)  
